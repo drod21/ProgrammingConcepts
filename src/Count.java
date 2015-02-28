@@ -21,12 +21,12 @@ public class Count {
 
         Scanner scan = new Scanner(System.in);
 
-  // Print a program header
+        // Print a program header
         System.out.println();
         System.out.println("Character Counter");
         System.out.println();
         do {
-  //Read in a string and find its length
+            //Read in a string and find its length
             System.out.print("Enter a sentence or phrase( 'quit' to quit): ");
             phrase = scan.nextLine();
             if (phrase.equalsIgnoreCase("quit")) {
@@ -34,14 +34,14 @@ public class Count {
             }
             length = phrase.length();
 
-  // Initialize counts
+            // Initialize counts
             countBlank = 0;
             aCount = 0;
             eCount = 0;
             sCount = 0;
             tCount = 0;
 
-   // a for loop to go through the string character by character and count the blank spaces
+            // a for loop to go through the string character by character and count the blank spaces
             for (int i = 0; i < length; i++) {
                 ch = phrase.charAt(i);
                 switch (ch) {
