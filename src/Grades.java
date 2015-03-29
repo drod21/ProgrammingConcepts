@@ -22,5 +22,22 @@ public class Grades {
         for (int i = 0; i < testKey.length; i++) {
             testKey[i] = scan.nextInt();
         }
+
+        while (yesno == 'y' || yesno == 'Y') {
+            count = 0;
+            for (int i = 0; i < testKey.length; i++) {
+                System.out.println("Enter the answer to be graded");
+                mGrade = scan.nextInt();
+                if (mGrade == testKey[i]) {
+                    ++count;
+                }
+            }
+            total = (double) count / testQ * 100;
+
+            System.out.println("The number of questions correct are: " + count);
+            System.out.println("The percentage correct is: " + total);
+            System.out.println("Grade another Quiz? y/n");
+            yesno = scan.next().charAt(0);
+        }
     }
 }
