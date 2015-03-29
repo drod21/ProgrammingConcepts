@@ -18,5 +18,9 @@ public class Grades {
         testQ = scan.nextInt();
         int[] testKey = new int[testQ];
 
+        System.out.println("Please enter your test key.");
+        for (int i = 0; i < testKey.length; i++) {
+            testKey[i] = scan.nextInt();
+        }
     }
 }
