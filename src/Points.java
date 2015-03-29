@@ -20,18 +20,28 @@ public class Points {
         System.out.print("How many points do you have?");
         points = scan.nextInt();
         int[][] table = new int[2][points];
-
-        System.out.print("Enter the second coordinates (x2 and y2):");
-        x2 = scan.nextDouble();
-        y2 = scan.nextDouble();
-
-        // Compute the distance
-        distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-
-        //To format the result and display.
-        System.out.println("The distance between the points (" + x1 + "," + y1 + ")" +
-                " and (" + x2 + "," + y2 + ")" +
-                " is "  );
-
+        double distance, shortest = 999999999;
+        for (i = 0; i < points; i++) {
+            System.out.println("For point " + (i + 1));
+            System.out.print("Enter x: ");
+            table[0][i] = scan.nextInt();
+            System.out.print("Enter y: ");
+            table[1][i] = scan.nextInt();
+        }
+        for (i = 0; i < points - 1; i++)
+            for (j = i + 1; j < points; j++) {
+                x = table[0][i] - table[0][j];
+                y = table[1][i] - table[1][j];
+                distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+                System.out.println("distance between points " + i + " and " + j + ": " + distance);
+                if (distance < shortest) {
+                    shortest = distance;
+                    short1 = i;
+                    short2 = j;
+                }
+            }
+        System.out.println("Shortest distance:" + shortest);
+        System.out.println("points: " + (short1 + 1) + ": (" + table[0][short1] + "," + table[1][short1] +
+                ") and " + (short2 + 1) + ": (" + table[0][short2] + "," + table[1][short2] + ")");
     }
 }
